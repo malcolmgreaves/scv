@@ -1,6 +1,12 @@
 *.class
 *.log
 
+# standard, common stuff
+*.swp
+
+# os related
+*.DS_Store
+
 # sbt specific
 .cache
 .history
@@ -12,6 +18,9 @@ src_managed/
 project/boot/
 project/plugins/project/
 
-# Scala-IDE specific
+# Scala-IDE & Intellij IDEA specific
 .scala_dependencies
 .worksheet
+.idea/
+.idea_modules/
+projectFilesBackup/
