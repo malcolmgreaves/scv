@@ -18,6 +18,7 @@ lazy val root = project
   	`scv-core`
     ,`scv-boof`
     ,`scv-open`
+    ,`scv-cmd`
   )
   .settings { noPublish }
 
@@ -46,6 +47,14 @@ lazy val `scv-open` = project
       RepoInfo(group = "malcolmgreaves", name = "scv-open")
     }
   }
+
+lazy val `scv-cmd` = project
+  .in(file("scv-cmd"))
+  .dependsOn(
+    `scv-open`
+    ,`scv-boof`
+  )
+  .settings { noPublish }
 
 lazy val subprojects: Seq[ProjectReference] = root.aggregate
 lazy val publishTasks = subprojects.map { publish.in }
